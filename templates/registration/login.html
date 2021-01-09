@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<style>
+	body{
+	background-color: linen;}
+
+</style>
+<body>
+
+<div class="container mt-5 card   ">
+ <div class="card-body text-center">
+     <div class="text-center " ><h1 style="font-size:50;" >MicroBlog</h1></div><hr>
+      <h5 class="my-4">Login to continue</h5>
+    <div class="">
+    <form class="" method="post">
+      {% csrf_token %}
+    <!--  {{ form.as_p }}-->
+
+
+        <p >username: {{ form.username }}</p>
+        <p>password: {{ form.password }}</p>
+       <button class="btn btn-primary my-2" type="submit">Login</button>
+      <a class="btn btn-outline-primary my-2" href='/password_reset/'>forgot password!!!</a><hr>
+       <a class="btn btn-outline-dark " href='/app1/signup'>new user ! sign up</a><hr>
+    </form>
+    </div>
+  <div class="d-flex padding justify-content-center">
+      <h5 class="my-3 mx-3">Login with</h5><br>
+      <a class="btn btn-danger my-2" href="{% url 'social:begin' 'google-oauth2' %}">Google</a><br>
+      <a class="btn btn-dark my-2" href="{% url 'social:begin' 'github' %}">GitHub</a><br>
+      <a class="btn btn-primary my-2" href="{% url 'social:begin' 'facebook' %}">Facebook</a>
+  </div>
+ </div>
+</div>
+</body>
+</html>

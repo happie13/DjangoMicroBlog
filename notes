@@ -1,0 +1,25 @@
+requests:
+
+
+CRUD  view -> create,retrive,update,delete
+
+GET -> retrive data / list data
+
+POST -> update,delete,change data
+
+
+
+how to send retrieve data on a request:
+
+use HttpResponse(variable.render(context))
+with a variable = get_template("file name") and context={a dictionary}
+
+or 
+
+render(request,filename,context)
+
+
+
+to learn more about forms,models ,modelform
+
+either use timezone in view to fliter acc to publishdate or use modelmanagerS

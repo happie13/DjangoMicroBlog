@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+
+
+<html>
+<head>
+	<title>diff</title>
+	<style>div{text-align: center;}</style>
+</head>
+<body>
+
+
+{% block content %}
+
+<div class=" card card-body pt-4">
+
+	<h3>{{object.title}}</h3>
+
+	<p>{{object.info}}</p>
+	<h5>slug: {{object.slug}} </h5>
+	<a href='/{{object.slug}}/edit'>edit</a>
+	<a href='/{{object.slug}}/delete'>delete</a>
+
+</div>
+{% endblock %}
+</body>
+</html>

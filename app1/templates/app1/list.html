@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<html>
+
+<body>
+{% block content %}
+
+{% for obj in list %}
+
+<div class='card my-2'>
+	<div class='card-body'>
+		{% if obj.image %}
+			<img src = "{{obj.image.url}} " class="card-img-top" >
+		{% endif %}
+		<h4 class='card-title'>{{ obj.title }}</h4>
+
+		<p class='card-text'>{{obj.info|truncatewords:50}}<span><a href='/app1/{{obj.slug}}/details'>more</a></span></p>
+		{% if user.is_authenticated %}
+		<span><a class = "btn btn-outline-warning" href='/app1/{{obj.pk}}/delete'>delete</a></span>
+		<span><a class = "btn btn-outline-success"  href='/app1/{{obj.slug}}/edit'>edit</a></span>
+		{% endif %}
+	</div>
+</div>
+
+{% endfor %}	
+
+{% endblock %}
+</body>
+</html>

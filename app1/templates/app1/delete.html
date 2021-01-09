@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+<html>
+<head>
+	<title>diff</title>
+	<style>ul;{text-decoration: none;}</style>
+</head>
+<body>
+
+<div>
+ 	{% block content %}
+
+ 	<h4> are you sure you want to delete this data ??</h4>
+ 	<ul>
+	<li><h3>{{object.title}}</h3></li>
+	</ul>
+
+
+	<form method="POST"> 
+		{% csrf_token %}
+		
+		<button class="btn btn-danger">yes,do it </button>
+		<a class='btn btn-dark' href='/app1/'>no take me back</a>
+	</form>
+
+	{% endblock %}
+
+</div>
+
+
+
+
+</body>
+</html>

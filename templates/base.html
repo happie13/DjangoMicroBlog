@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>homepage</title>
+    <style>
+    	body {background-color:snow;
+    	font-size:24;
+    	font-family:calibri;
+    	}
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+		<div class='container '>
+		{% include "navbar.html" %}
+
+		{% block content %}
+			<div class="container mt-5 pt-1 card">
+				<div class="card-body text-center">
+				<h1>welcome to django Blog project</h1>
+				<p class="pt-2">
+					<a class='btn btn-outline-success' href="/app1">All Articles</a>
+					<a class='btn btn-outline-primary' href="/about">About Me</a>
+
+				</p>
+				</div>
+			</div>
+		{% endblock %}
+
+
+
+
+
+
+<!--	<div class=" container card mt-5 w-50 text-center" style="">-->
+<!--	  <div class=" card-body " style="">-->
+<!--	 	<h1 class="alert alert-primary "> You need to login to view this page</h1>-->
+<!--		  <a class="btn btn-primary mt-3 mx-auto" type="button" href='login'>login now</a>-->
+<!--	  </div>-->
+<!--	</div>-->
+
+
+
+</div>
+{% include "js.html" %}
+</body>
+</html>

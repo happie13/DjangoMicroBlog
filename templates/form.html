@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+<head>
+    <title>
+        {% if title %}
+        create post
+        {% endif %}
+    </title>
+</head>
+<body>
+{% block content %}
+<div class="container card">
+
+    <div class="card-body ">
+         <h5 > Create a Post</h5>
+        <form method=POST action='/app1-new' enctype="multipart/form-data" class="uniForm">
+            {% csrf_token %}
+             {% for field in form %}
+             {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        {% if field.help_text %}
+        <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+            {% endfor %}
+            <button class="btn btn-primary" type='reset' value='reset'>reset</button>
+            <button class="btn btn-success" type='submit' value='submit'>submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
